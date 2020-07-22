@@ -3,9 +3,20 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Drone Detection</title>
+    <title>Are you Toxic?</title>
+    <link rel="stylesheet" href="{{url_for("static",filename="css/style.css")}}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    <h2>Drone Detector</h2>
+    
+    <div class="container">
+        <div class="text">
+            <h2>How toxic are you?</h2>
+            <p> This program outputs probabilities of each type of toxicity based on your comment.</p>
+            <p class="toxic-types">Types of toxicity are: 1. Toxic, 2. Severe toxic, 3. Obscene, 4. Threat, 5. Insult, 6. Identity hate</p>
+        </div>
+        <img src="{{ url_for("static",filename="toxic_banner.jpg") }}" alt="toxic" class="toxic-bg" />
+
+    </div>
 </body>
 </html>
