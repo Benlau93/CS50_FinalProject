@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Are you Toxic?</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for("static",filename="css/style.css")}}" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="text">
+            <h2>How toxic are you?</h2>
+            <p> This program determine the toxicity of your text and outputs the probabilities of each type of toxicity.</p>
+            <p class="toxic-types">Types of toxicity are: 1. <span class="toxicity">Toxic</span>, 2. <span class="toxicity">Severe toxic</span>, 3. <span class="toxicity">Obscene</span>, 4. <span class="toxicity">Threat</span>, 5. <span class="toxicity">Insult</span>, 6. <span class="toxicity">Identity hate</span></p>
+        </div>
+        <div class="result-container">
+            <div class="result">
+                <span>Toxic</span>
+                <span>Severe Toxic</span>
+                <span>Obscene</span>
+                <span>Threat</span>
+                <span>Insult</span>
+                <span>Identity hate</span>
+            </div>
+        </div>
+        <div class="toxic-container">
+        <img src="{{ url_for("static",filename="toxic_banner.jpg") }}" alt="toxic" class="toxic-bg" />
+        </div>
+
+
+    </div>
+</body>
+</html>
