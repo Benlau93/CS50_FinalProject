@@ -13,7 +13,14 @@ wsgi_app = app.wsgi_app
 @app.route('/')
 def index():
     # render homepage
-    return render_template("result.html")
+    return render_template("index.html")
+
+
+@app.route("/result",methods=["POST"])
+def result():
+	if request.method=="POST":
+		test = request.form.get("toxic-text")
+		return render_template("result.html",test = test)
 
 if __name__ == '__main__':
     import os
