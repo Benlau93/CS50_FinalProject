@@ -16,19 +16,34 @@
             <p> This program determine the toxicity of your text and outputs the probabilities of each type of toxicity.</p>
             <p class="toxic-types">Types of toxicity are: 1. <span class="toxicity">Toxic</span>, 2. <span class="toxicity">Severe toxic</span>, 3. <span class="toxicity">Obscene</span>, 4. <span class="toxicity">Threat</span>, 5. <span class="toxicity">Insult</span>, 6. <span class="toxicity">Identity hate</span></p>
         </div>
+
         <div class="result-container">
             <div class="result">
-                <span>Toxic</span>
-                <span>Severe Toxic</span>
-                <span>Obscene</span>
-                <span>Threat</span>
-                <span>Insult</span>
-                <span>Identity hate</span>
+                <span>Toxic <br><span>{{ result["toxic"] }}%</span></span>
+                <span>Severe Toxic<br><span>{{ result["severe_toxic"] }}%</span></span>
+                <span>Obscene<br><span>{{ result["obscene"] }}%</span></span>
+                <span>Threat<br><span>{{ result["threat"] }}%</span></span>
+                <span>Insult<br><span>{{ result["insult"] }}%</span></span>
+                <span>Identity hate<br><span>{{ result["identity_hate"] }}%</span></span>
             </div>
         </div>
         <div class="toxic-container">
         <img src="{{ url_for("static",filename="toxic_banner.jpg") }}" alt="toxic" class="toxic-bg" />
         </div>
+        <div class="card border-danger mb-3 toxic-card" style="max-width: 18rem;">
+          <div class="card-header">Toxicity</div>
+          <div class="card-body text-danger">
+            {% if toxic %}
+            <h5 class="card-title">YOU ARE TOXIC!</h5>
+            <p class="card-text">{{max_prob}}% to be exact.</p>
+            {% else %}
+            <h5 class="card-title">You are not toxic at all...</h5>
+            <p class="card-text">Keep it up.</p>
+            {% endif %}
+            
+          </div>
+        </div>
+        <p>*Dataset obtained from <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/overview" target="_blank">Kaggle Toxic Comment Classification Challenge</a></p>
 
 
     </div>
